@@ -9,3 +9,25 @@
 
 본 프레임워크는 특정 개발 환경(LangGraph, CrewAI 등)의 종속성을 완벽히 탈피하여, 멀티 에이전트 시스템 내부에서 가공된 텔레메트리 스트림을 3단계 필터링 아키텍처를 통해 검증하는 '선 규칙 검증, 후 모델 심사' 체계를 채택합니다.
 
+
+## 2. Quick Start
+
+### Install packages
+본 PoC 프로토타입 엔진은 타 사상 외부 패키지 라이브러리 설치 의존성을 완전히 차단하여, Python 3.8+ 환경에서 별도의 라이브러리 설치 없이 구동되도록 컴파일 설계되었습니다.
+
+
+Step 1. 가상 런타임 스트레스 데이터셋 빌드
+아래 스크립트를 실행하여 테스트용 모의 추적 로그 데이터셋인 telemetry_log.json 파일을 로컬 디렉토리에 생성합니다.
+
+'''python generate_mock_trace.py'''
+
+Step 2. FSM 런타임 검증 파이프라인 가동 및 차단 제어 리포팅
+생성된 로그 시퀀스를 파싱하여 문맥적 지표를 동적 연산하고, 인터셉트 판정 결과 대시보드를 리포팅합니다. (실행 시 콘솔 출력과 동시에 evaluation_report.txt 파일로 보관됩니다.)
+'''python verify_trace.py'''
+
+Step 3.Console Execution Output (Expected Results)
+verify_trace.py 엔진 가동 시 출력되는 실제 PoC 정량 검증 지표 보고서입니다.
+
+
+
+
