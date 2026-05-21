@@ -23,6 +23,7 @@ Step 1. 가상 런타임 스트레스 데이터셋 빌드
 
 Step 2. FSM 런타임 검증 파이프라인 가동 및 차단 제어 리포팅
 생성된 로그 시퀀스를 파싱하여 문맥적 지표를 동적 연산하고, 인터셉트 판정 결과 대시보드를 리포팅합니다. (실행 시 콘솔 출력과 동시에 evaluation_report.txt 파일로 보관됩니다.)
+
 '''python verify_trace.py'''
 
 Step 3.Console Execution Output (Expected Results)
