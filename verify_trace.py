@@ -73,3 +73,11 @@ def evaluate_runtime_telemetry():
 if __name__ == "__main__":
     evaluate_runtime_telemetry()
     
+    # 2. 동일한 결과를 'evaluation_report.txt' 파일로도 자동 저장
+    import sys
+    with open("evaluation_report.txt", "w", encoding="utf-8") as f:
+        sys.stdout = f  # 출력을 파일로 방향 전환
+        evaluate_runtime_telemetry()
+    sys.stdout = sys.__stdout__  # 출력을 다시 터미널로 복구
+    
+    print("\nSUCCESS: 'evaluation_report.txt' 파일로도 보고서가 자동 저장되었습니다.")
